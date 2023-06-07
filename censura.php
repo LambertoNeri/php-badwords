@@ -1,6 +1,7 @@
 <?php
     $para = $_GET['paragraph'];
     $cens = $_GET['censure'];
+    $new_para = str_replace($cens, '***', $para)
 ?>
 
 
@@ -16,9 +17,9 @@
     <div>Paragrafo non censurato: <?= $para ?></div>
     <div>Lunghezza paragrafo:  <?= strlen($para); ?></div>
     <h3> Censuriamooooo!!! </h2>
-    <div>Paragrafo censurato: <?php echo preg_replace( '/' .  $cens  . '/' , '***', $para ); ?> </div>
+    <div>Paragrafo censurato: <?= $new_para ?> </div>
     <div>ho sostituito la parola: <?php echo $_GET['censure'] ?></div>
-    <div>Lunghezza paragrafo:  <?php echo strlen( preg_replace( '/' .  $cens  . '/' , '***', $para)); ?> </div>
+    <div>Lunghezza paragrafo:  <?php echo strlen( $new_para ); ?> </div>
 
    
 </body>
